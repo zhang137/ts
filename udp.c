@@ -1,29 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
+#include <time.h>
+
+#include "mydef.h"
 #include "udp.h"
+#include "cksum.h"
 
-uint16_t cksum(uint16_t *packet, int size_len)
+
+uint16_t rand_port()
 {
-    uint32_t sum = 0;
+    time_t tm;
+    srand(time(&tm));
     
-    while(size_len > 1)
-    {
-        sum += *packet++;
-        size_len --;
-    }
-
-    if(size_len == 1)
-    {
-        sum += *((uint8_t *)packet); 
-    }
-
-    sum += (sum >> 16) + (sum & 0xffff);
-    sum += (sum >> 16);
-
-    return ~(uint16_t)sum;
+    return (rand() % (2<<15))+ (2<<15);
 }
 
-void transmit_udp_packet(const char* packet,int *packet_len)
+
+int transmit_udp_packet(const char* packet,int *packet_len)
 {
+    struct udphdr *udp = (struct udphdr *)packet; 
+    
+    udp->sport = source_port = source_port ? source_port : rand_port();
+    udp->dport = dest_port; 
+    udp->len = sizeof(struct udphdr);
+    udp->cksum = 0;
+    
+    *packet_len += udp->len;
 
+    return 0;
 }
+
+

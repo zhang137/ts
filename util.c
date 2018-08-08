@@ -4,10 +4,10 @@
 #include <unistd.h>
 #include <ctype.h>
 #include <ifaddrs.h>
+#include <fcntl.h>
 #include <sys/ioctl.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include <ifaddrs.h>
 #include <netdb.h>
 #include <net/if.h>
 #include <arpa/inet.h>
@@ -16,22 +16,7 @@
 #include "util.h"
 #include "ip.h"
 
-//#define BUFSIZ 1024
-
-int strequl(const char *str1, const char *str2)
-{
-    size_t slen1 = strlen(str1);
-    size_t slen2 = strlen(str2);
-
-    if(slen1 != slen2)
-        return 0;
-
-    if(strstr(str1,str2) != str1)
-        return 0;
-
-    return 1;
-
-}
+#define FILE_DATA_SIZE 4096
 
 int getTimeInterval(const char* optarg)
 {
@@ -96,6 +81,9 @@ int prase_iproute(const char *optarg,const char *s)
     const char *pdata = NULL;
     const char *temp = NULL; 
     const char *data = optarg;
+
+    if(!data)
+        return 0;
 
     while((temp = strtok_r(data,s,&pdata)) != NULL)
     {
@@ -166,6 +154,9 @@ int prase_scanport(const char *optarg, const char *s)
     const char *pdata = NULL;
     const char *temp = NULL;
     const char *data = optarg;
+    
+    if(!data)
+        return -1;
 
     while((temp = strtok_r(data,s,&pdata)) != NULL)
     {
@@ -270,4 +261,28 @@ int getRemoteAddr()
 }
 
 
+
+
+int read_data(const char *packet, int len)
+{
+    int fd = 0;
+    int ret = 0;
+
+    if(!len) {
+        len = FILE_DATA_SIZE;
+    }
+
+    if(access(file_name,R_OK | F_OK)) {
+        return -1; 
+    }
+   
+    fd = open(file_name,O_RDONLY);
+    if(fd < 0) {
+        return -1;
+    }
+
+    while(1) ;
+
+
+}
 

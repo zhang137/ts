@@ -7,10 +7,10 @@ __BEGIN_DECLS
 
 struct udphdr
 {
-  u_int16_t source;
-  u_int16_t dest;
+  u_int16_t sport;
+  u_int16_t dport;
   u_int16_t len;
-  u_int16_t check;
+  u_int16_t cksum;
 };
 
 
@@ -27,7 +27,7 @@ __END_DECLS
 
 
 
-void transmit_udp_packet(const char* packet,int *packet_len);
+int transmit_udp_packet(const char* packet,int *packet_len);
 
 
 #endif // UDP_H 

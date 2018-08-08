@@ -71,7 +71,7 @@ struct icmphdr
 #define ICMP_EXC_TTL		0	/* TTL count exceeded		*/
 #define ICMP_EXC_FRAGTIME	1	/* Fragment Reass time exceeded	*/
 
-void transmit_icmp_packet(const char *packet,int *packet_len);
+int transmit_icmp_packet(const char *packet,int *packet_len);
 
 
 __END_DECLS 

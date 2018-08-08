@@ -6,7 +6,6 @@
 #include <netinet/in.h>
 #include <time.h>
 
-#include "protocal.h"
 #include "mydef.h"
 #include "ip.h"
 
@@ -27,7 +26,7 @@ uint32_t rand_ipaddr(int type)
     return 0; 
 }
 
-int prase_ip_option(const char *ip_opt, int *opt_len)
+int ip_opt(const char *ip_opt, int *opt_len)
 {
     const char *data = ip_opt;
     
@@ -82,10 +81,8 @@ int prase_ip_option(const char *ip_opt, int *opt_len)
 
 void parcel_ip_packet(const char *packet,int *packet_len)
 {
-    int *opt_len = packet_len,ip_len;
-    struct iphdr *ip;
-
-    ip = (struct iphdr *)packet;
+    int opt_len,ip_len;
+    struct iphdr *ip = (struct iphdr *)packet;
     ip->iph_version = 4;
     
     ip->iph_id = rand_ipid ? rand_ip_id() : ip_id;
@@ -108,24 +105,20 @@ void parcel_ip_packet(const char *packet,int *packet_len)
         ip->iph_proto = UDP;
    
     ip->iph_tos = tos;
-
     ip->iph_cksum = 0;
 
-    ip->iph_dst = rand_dest ? rand_ipaddr(1): dest_addr;
-    ip->iph_src = rand_source ? rand_ipaddr(0) : src_addr;
+    ip->iph_dst = dest_addr = rand_dest ? rand_ipaddr(1): dest_addr;
+    ip->iph_src = src_addr = rand_source ? rand_ipaddr(0) : src_addr;
 
     ip_len = sizeof(struct iphdr);
 
-    if(ip_option)
-    {
-        prase_ip_option((const char *)(ip + ip_len), opt_len);
+    if(ip_option) {
+        ip_opt((const char *)(ip + ip_len), &opt_len);
     }
     
-    ip_len = ip_len + *opt_len;
+    *packet_len = ip_len = ip_len + opt_len;
     ip->iph_ihl = ip_len >> 2;
-
-    return parcel_proto_packet((const char *)(ip+ip_len),opt_len);
-
+    
 }
 
 

@@ -3,6 +3,7 @@
 #include <getopt.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdint.h>
 
 #include "util.h"
 #include "mydef.h"
@@ -51,8 +52,7 @@ static struct option long_options[] =
     {"rroute",no_argument,0,'G'},
     {"lsrr",required_argument,0,0},
     {"ssrr",required_argument,0,0},
-    {"iptstamp",no_argument,&ip_tstamp,1},
-    
+   
 //tcp/udp
     {"baseport",required_argument,0,'s'},
     {"destport",required_argument,0,'p'},
@@ -73,7 +73,6 @@ static struct option long_options[] =
     {"tcpexitcode",required_argument,0,0},
     {"tcp-mss",required_argument,0,0},
     {"tcp-timestamp",no_argument,&tcp_timestamp,1},
-    {"tcp-sack-permit",no_argument,&tcp_sack_permit,1},
 //icmp    
     {"icmp-type",required_argument, 0,'C'},
     {"icmp-code",required_argument,0,'K'},
@@ -109,74 +108,37 @@ void version_print()
     fprintf(stdout,"%s",version);
 }
 
-
-
 int prase_noarg_option(const char* opt_name,const char *optarg)
 {
-   if(tcp_mode || udp_mode || traceroute_mode 
-           || listen_mode || scan_mode)
-   {
-        
-       if(!strcmp(opt_name,"force_icmp")) 
-        {
-            force_icmp = 0;
-        }else if(!strcmp(opt_name,"icmp-gw"))
-        {
-            icmp_gw = 0;
-        }else if(!strcmp(opt_name,"icmp-ts"))
-        {
-            icmp_ts = 0;
-        }else if(!strcmp(opt_name,"icmp-addr"))
-        {
-            icmp_addr = 0;
-        }else if(!strcmp(opt_name,"icmp-help"))
-        {
-            icmp_help = 0;
-        }
-   }
-   if(icmp_mode || udp_mode || traceroute_mode || listen_mode)
-   {
-       if(strcmp(opt_name,"tcp-timestamp")) {
-             tcp_timestamp = 0;
-         }else if(strcmp(opt_name,"tcp-sack-permit")) {
-             tcp_sack_permit = 0;
-         }
-    }
 
-    if(tcp_mode && strcmp(opt_name,"tcp-mss")) {
+    if(tcp_mode && !strcmp(opt_name,"tcp-mss")) {
          tcp_mss= atoi(optarg);
-    }        
+    }          
 
-    if(!listen_mode)
+    if(!listen_mode) 
     {
-         if(!strcmp(opt_name,"ssrr")) 
-         {    
+         if(!strcmp(opt_name,"ssrr")) {    
              ssrr_route = string_copy(optarg);
              ssrr = 1;
          }
-         else if(!strcmp(opt_name,"lsrr"))
-         {
+         else if(!strcmp(opt_name,"lsrr")) {
              lsrr_route = string_copy(optarg);
              lsrr = 1;
-         }else if(!strcmp(opt_name,"rand-dest"))
-         {
+         }else if(!strcmp(opt_name,"rand-dest")) {
              rand_dest = 1;
-         }else if(!strcmp(opt_name,"rand-source"))
-         {
+         }else if(!strcmp(opt_name,"rand-source")){
              rand_source = 1;
          }
     }
    
-    if(!strcmp(opt_name,"fast"))
-    {
+    if(!strcmp(opt_name,"fast")) {
         interval = 10000;
-    }else if(!strcmp(opt_name,"faster"))
-    {
+    }else if(!strcmp(opt_name,"faster")) {
         interval = 1000;
-    }else if(!strcmp(opt_name,"flood"))
-    {
+    }else if(!strcmp(opt_name,"flood")) {
         flood = 1;
     }
+
     return 0;
 }
 
@@ -263,9 +225,12 @@ int prase_other_option(int opt,const char *arg)
             break;
         case't':
             ttl = atoi(arg);
+            if(ttl < 0 || ttl > 255)
+                return -1;
             break;
         case'N':
             ip_id = atoi(arg);
+            if(ip_id < 0 || ip_id > UINT16_MAX)
             rand_ipid = 0;
             break;
         case'W':
@@ -279,7 +244,7 @@ int prase_other_option(int opt,const char *arg)
             break;
         case'x':
             ip_mfrag = 1;
-            break;
+            break; 
         case'y':
             ip_dfrag = 1;
             break;

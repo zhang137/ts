@@ -7,7 +7,7 @@ void use_normal_socket();
 
 void send_packet();
 
-void parcel_proto_packet(const char *pack_data);
+int parcel_proto_packet(const char *, int *);
 
 void send_packet_flood();
 

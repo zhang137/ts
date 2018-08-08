@@ -77,7 +77,7 @@ u_int8_t icmp_code = 0;
 u_int16_t source_port = 0;
 u_int16_t dest_port = 0;
 u_int16_t tcp_mss = 0;
-u_int8_t window = 0;
+u_int8_t window = 64;
 u_int16_t badcksum = 0;
 
 u_int8_t tcp_offset = 0;
@@ -104,9 +104,11 @@ int32_t  tcp_exitcode;
 
 uint32_t src_addr;
 uint32_t dest_addr;
+uint32_t redrct_gateway;
 
 uint32_t route_data[8];
 uint16_t scanport_data[16];
+
 
 
 char* string_copy(const char *source)

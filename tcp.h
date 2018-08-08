@@ -7,7 +7,7 @@ __BEGIN_DECLS
 
 typedef u_int tcp_seq;
 
-struct tcpheader {
+struct tcphdr {
 	u_short th_sport;               /* source port */
 	u_short th_dport;               /* destination port */
 	tcp_seq th_seq;                 /* sequence number */
@@ -163,7 +163,7 @@ struct tcp_winscale
     u_int8_t scale;
 }__attribute__((packed));
 
-struct tcp_timestamp 
+struct tcp_tmstamp 
 {
     u_int8_t type;
     u_int8_t len;
@@ -187,7 +187,7 @@ struct tcp_sack
 __END_DECLS
 
 
-void transmit_tcp_packet(const char* packet,int *packet_len);
+int transmit_tcp_packet(const char* packet,int *packet_len);
 
 
 #endif //TCP_H

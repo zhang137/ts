@@ -6,27 +6,11 @@
 #include <stdint.h>
 #include <sys/time.h>
 #include "icmp.h"
+#include "cksum.h"
 
-uint16_t cksum(uint16_t *packet, int size_len)
-{
-    uint32_t sum = 0;
-    
-    while(size_len > 1)
-    {
-        sum += *packet++;
-        size_len --;
-    }
-
-    if(size_len == 1)
-    {
-        sum += *((uint8_t *)packet); 
-    }
-
-    sum += (sum >> 16) + (sum & 0xffff);
-    sum += (sum >> 16);
-
-    return ~(uint16_t)sum;
-}
+#define DATALEN 56
+#define PING_TYPE 8
+#define DEFAULT_CODE 0
 
 int32_t gettimestamp()
 {
@@ -37,49 +21,47 @@ int32_t gettimestamp()
 }
 
 
-void transmit_icmp_packet(const char *packet,int *packet_len)
+int transmit_icmp_packet(const char *packet,int *packet_len)
 {
 
     struct icmphdr *icmp = (struct icmphdr*)packet;
-    int data_len = 56;
+    int data_len = DATALEN;
 
-    if(icmp_gw)
-    {
+    if(icmp_gw) {
         icmp->type = ICMP_REDIRECT;
         icmp->code = ICMP_REDIR_HOST;
         icmp->un.gateway = redict_gateway;
-        
-        memset((unsigned char*)icmp + sizeof(struct icmphdr),0x5,sizeof(data_len));
 
-    }else if(icmp_ts)
-    {
+    }else if(icmp_ts) {
         icmp->type = ICMP_TIMESTAMP;
-        icmp->code = 0;
-
-        int32_t tstamp = gettimestamp();
-        memcpy((unsigned char*)icmp + 4,&tstamp,sizeof(int32_t));
-        
-        memset((unsigned char *)icmp+sizeof(struct icmphdr),0x5,data_len - 8);
-
-    }else if(icmp_addr)
-    {
-        icmp->type = ICMP_ADDRESS;
-        icmp->code = 0;
+        icmp->code = DEFAULT_CODE;
 
         icmp->un.echo.id = getpid();
-        icmp->un.echo.sequence = 0;
-        
-        memset((unsigned char *)icmp + sizeof(struct icmphdr),0x5,data_len);
+        icmp->un.echo.sequence = sequence;
 
-    }else{
+        int32_t tstamp = gettimestamp();
+        memcpy((unsigned char*)icmp + sizeof(struct icmphdr),&tstamp,sizeof(tstamp));
+        
+        data_len = data_len -sizeof(tstamp);
+
+    }else if(icmp_addr) {
+        icmp->type = ICMP_ADDRESS;
+        icmp->code = DEFAULT_CODE;
+
+        icmp->un.echo.id = getpid();
+        icmp->un.echo.sequence = sequence;
+
+    }else if(icmp_type != PING_TYPE){
         icmp->type = icmp_type;
         icmp->code = icmp_code;
-
+    } else {
         
-
+        icmp->un.echo.id = getpid();
+        icmp->un.echo.sequence = sequence; 
     }
-    
-    *packet_len = sizeof(struct icmphdr) + data_len;
+        
+    memset((unsigned char*)icmp + sizeof(struct icmphdr),0x5c,sizeof(data_len));
+    *packet_len += sizeof(struct icmphdr) + data_len;
 
     icmp->checksum = 0;
     icmp->checksum = cksum((uint16_t *)icmp,
