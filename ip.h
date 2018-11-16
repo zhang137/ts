@@ -119,10 +119,6 @@ struct ip_scurity
 #define	IPVERSION	4               /* IP version number */
 #define	IP_MAXPACKET	65535		/* maximum packet size */
 
-//#define IP_DF 0x2 
-#define IP_MF_M 0x3 
-#define IP_MF_L 0x0 
-
 #define	IPTOS_TOS_MASK		0x1E
 #define	IPTOS_TOS(tos)		((tos) & IPTOS_TOS_MASK)
 #define	IPTOS_LOWDELAY		0x10

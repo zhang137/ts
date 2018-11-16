@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <time.h>
+#include <sys/time.h>
 #include <netinet/in.h>
 
 #include "tcp.h"
@@ -44,7 +45,6 @@ void tcp_option(const char *packet, int *option_len)
     } 
 
 }
-
 
 
 int transmit_tcp_packet(const char* packet,int *packet_len)

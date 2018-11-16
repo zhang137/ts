@@ -4,8 +4,8 @@
 #include <signal.h>
 #include <string.h>
 #include "prase_option.h"
-#include "mydef.h"
-#include "protocal.h"
+#include "def.h"
+#include "protocol.h"
 #include "util.h"
 #include "icmp.h"
 #include "tcp.h"

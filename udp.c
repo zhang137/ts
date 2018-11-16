@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <time.h>
 
-#include "mydef.h"
+#include "def.h"
 #include "udp.h"
 #include "cksum.h"
 
@@ -26,7 +26,7 @@ int transmit_udp_packet(const char* packet,int *packet_len)
     udp->len = sizeof(struct udphdr);
     udp->cksum = 0;
     
-    *packet_len += udp->len;
+    *packet_len = udp->len;
 
     return 0;
 }

@@ -1,5 +1,5 @@
 #include <string.h>
-#include "mydef.h"
+#include "def.h"
 
 int32_t  tcp_mode = 1;
 int32_t  rawip_mode = 0;

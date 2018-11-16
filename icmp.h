@@ -1,7 +1,7 @@
 #ifndef ICMP_H 
 #define ICMP_H
 
-#include "mydef.h"
+#include "def.h"
 
 __BEGIN_DECLS
 

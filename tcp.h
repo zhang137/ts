@@ -1,7 +1,7 @@
 #ifndef TCP_H 
 #define TCP_H 
 
-#include "mydef.h"
+#include "def.h"
 
 __BEGIN_DECLS 
 
@@ -74,14 +74,6 @@ struct tcpheadr
     u_int16_t tch_purg;
 };*/
 
-struct tcp_pseudoheader
-{
-    u_int32_t source;
-    u_int32_t dest;
-    u_int8_t zero;
-    u_int8_t protocol;
-    u_int16_t length;
-};
 
 
 enum

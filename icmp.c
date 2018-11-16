@@ -40,7 +40,8 @@ int transmit_icmp_packet(const char *packet,int *packet_len)
         icmp->un.echo.sequence = sequence;
 
         int32_t tstamp = gettimestamp();
-        memcpy((unsigned char*)icmp + sizeof(struct icmphdr),&tstamp,sizeof(tstamp));
+        memcpy((unsigned char*)icmp + sizeof(struct icmphdr),
+                &tstamp,sizeof(tstamp));
         
         data_len = data_len -sizeof(tstamp);
 
@@ -60,13 +61,14 @@ int transmit_icmp_packet(const char *packet,int *packet_len)
         icmp->un.echo.sequence = sequence; 
     }
         
-    memset((unsigned char*)icmp + sizeof(struct icmphdr),0x5c,sizeof(data_len));
-    *packet_len += sizeof(struct icmphdr) + data_len;
+    memset((unsigned char*)icmp + sizeof(struct icmphdr),
+            0x5c,sizeof(data_len));
+    *packet_len = sizeof(struct icmphdr) + data_len;
 
     icmp->checksum = 0;
-    icmp->checksum = cksum((uint16_t *)icmp,
-            *packet_len);
-
+    icmp->checksum = cksum((uint16_t *)icmp,*packet_len);
+    
+    return 0;
 }
 
 

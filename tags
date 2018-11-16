@@ -1,0 +1,377 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ICMP	mydef.h	13;"	d
+ICMP_ADDRESS	icmp.h	40;"	d
+ICMP_ADDRESSREPLY	icmp.h	41;"	d
+ICMP_DEST_UNREACH	icmp.h	30;"	d
+ICMP_ECHO	icmp.h	33;"	d
+ICMP_ECHOREPLY	icmp.h	29;"	d
+ICMP_EXC_FRAGTIME	icmp.h	72;"	d
+ICMP_EXC_TTL	icmp.h	71;"	d
+ICMP_FRAG_NEEDED	icmp.h	50;"	d
+ICMP_H	icmp.h	2;"	d
+ICMP_HOST_ANO	icmp.h	56;"	d
+ICMP_HOST_ISOLATED	icmp.h	54;"	d
+ICMP_HOST_UNKNOWN	icmp.h	53;"	d
+ICMP_HOST_UNREACH	icmp.h	47;"	d
+ICMP_HOST_UNR_TOS	icmp.h	58;"	d
+ICMP_INFO_REPLY	icmp.h	39;"	d
+ICMP_INFO_REQUEST	icmp.h	38;"	d
+ICMP_NET_ANO	icmp.h	55;"	d
+ICMP_NET_UNKNOWN	icmp.h	52;"	d
+ICMP_NET_UNREACH	icmp.h	46;"	d
+ICMP_NET_UNR_TOS	icmp.h	57;"	d
+ICMP_PARAMETERPROB	icmp.h	35;"	d
+ICMP_PKT_FILTERED	icmp.h	59;"	d
+ICMP_PORT_UNREACH	icmp.h	49;"	d
+ICMP_PREC_CUTOFF	icmp.h	61;"	d
+ICMP_PREC_VIOLATION	icmp.h	60;"	d
+ICMP_PROT_UNREACH	icmp.h	48;"	d
+ICMP_REDIRECT	icmp.h	32;"	d
+ICMP_REDIR_HOST	icmp.h	66;"	d
+ICMP_REDIR_HOSTTOS	icmp.h	68;"	d
+ICMP_REDIR_NET	icmp.h	65;"	d
+ICMP_REDIR_NETTOS	icmp.h	67;"	d
+ICMP_SOURCE_QUENCH	icmp.h	31;"	d
+ICMP_SR_FAILED	icmp.h	51;"	d
+ICMP_TIMESTAMP	icmp.h	36;"	d
+ICMP_TIMESTAMPREPLY	icmp.h	37;"	d
+ICMP_TIME_EXCEEDED	icmp.h	34;"	d
+IPDEFTTL	ip.h	164;"	d
+IPFRAGTTL	ip.h	165;"	d
+IPOPT_END	ip.h	136;"	d
+IPOPT_EOL	ip.h	135;"	d
+IPOPT_LSRR	ip.h	145;"	d
+IPOPT_MINOFF	ip.h	154;"	d
+IPOPT_NOOP	ip.h	138;"	d
+IPOPT_NOP	ip.h	137;"	d
+IPOPT_OFFSET	ip.h	153;"	d
+IPOPT_OLEN	ip.h	152;"	d
+IPOPT_OPTVAL	ip.h	151;"	d
+IPOPT_RA	ip.h	149;"	d
+IPOPT_RR	ip.h	140;"	d
+IPOPT_SATID	ip.h	146;"	d
+IPOPT_SEC	ip.h	144;"	d
+IPOPT_SECURITY	ip.h	143;"	d
+IPOPT_SID	ip.h	147;"	d
+IPOPT_SSRR	ip.h	148;"	d
+IPOPT_TIMESTAMP	ip.h	142;"	d
+IPOPT_TS	ip.h	141;"	d
+IPOPT_TS_PRESPEC	ip.h	161;"	d
+IPOPT_TS_TSANDADDR	ip.h	160;"	d
+IPOPT_TS_TSONLY	ip.h	159;"	d
+IPTOS_LOWCOST	ip.h	131;"	d
+IPTOS_LOWDELAY	ip.h	128;"	d
+IPTOS_MINCOST	ip.h	132;"	d
+IPTOS_RELIABILITY	ip.h	130;"	d
+IPTOS_THROUGHPUT	ip.h	129;"	d
+IPTOS_TOS	ip.h	127;"	d
+IPTOS_TOS_MASK	ip.h	126;"	d
+IPTTLDEC	ip.h	166;"	d
+IPVERSION	ip.h	119;"	d
+IP_DF	ip.h	26;"	d
+IP_H	ip.h	2;"	d
+IP_MAXPACKET	ip.h	120;"	d
+IP_MF	ip.h	27;"	d
+IP_MF_L	ip.h	124;"	d
+IP_MF_M	ip.h	123;"	d
+IP_MSS	ip.h	168;"	d
+IP_OFFMASK	ip.h	28;"	d
+IP_RF	ip.h	25;"	d
+JudgeIpIsCorrect	util.c	/^int JudgeIpIsCorrect(const char *ip)$/;"	f
+JudgeScanPortCorrect	util.c	/^int JudgeScanPortCorrect(const char *arg,int *opt_num)$/;"	f
+MAXTTL	ip.h	163;"	d
+MAX_ARGUMENT_LEN	mydef.h	11;"	d
+MAX_IPOPTLEN	ip.h	156;"	d
+MYDEF_H	mydef.h	2;"	d
+NR_ICMP_TYPES	icmp.h	42;"	d
+NR_ICMP_UNREACH	icmp.h	62;"	d
+PRASE_OPTION_H	prase_option.h	2;"	d
+PROTOCAL_H	protocal.h	2;"	d
+SOL_TCP	tcp.h	130;"	d
+TCP	mydef.h	12;"	d
+TCPI_OPT_ECN	tcp.h	136;"	d
+TCPI_OPT_SACK	tcp.h	134;"	d
+TCPI_OPT_TIMESTAMPS	tcp.h	133;"	d
+TCPI_OPT_WSCALE	tcp.h	135;"	d
+TCPOLEN_MAXSEG	tcp.h	105;"	d
+TCPOLEN_SACK_PERMITTED	tcp.h	109;"	d
+TCPOLEN_TIMESTAMP	tcp.h	112;"	d
+TCPOLEN_TSTAMP_APPA	tcp.h	113;"	d
+TCPOLEN_WINDOW	tcp.h	107;"	d
+TCPOPT_EOL	tcp.h	102;"	d
+TCPOPT_MAXSEG	tcp.h	104;"	d
+TCPOPT_NOP	tcp.h	103;"	d
+TCPOPT_SACK	tcp.h	110;"	d
+TCPOPT_SACK_PERMITTED	tcp.h	108;"	d
+TCPOPT_TIMESTAMP	tcp.h	111;"	d
+TCPOPT_TSTAMP_HDR	tcp.h	115;"	d
+TCPOPT_WINDOW	tcp.h	106;"	d
+TCP_CLOSE	tcp.h	/^  TCP_CLOSE,$/;"	e	enum:__anon4
+TCP_CLOSE_WAIT	tcp.h	/^  TCP_CLOSE_WAIT,$/;"	e	enum:__anon4
+TCP_CLOSING	tcp.h	/^  TCP_CLOSING   \/* now a valid state *\/$/;"	e	enum:__anon4
+TCP_ESTABLISHED	tcp.h	/^  TCP_ESTABLISHED = 1,$/;"	e	enum:__anon4
+TCP_FIN_WAIT1	tcp.h	/^  TCP_FIN_WAIT1,$/;"	e	enum:__anon4
+TCP_FIN_WAIT2	tcp.h	/^  TCP_FIN_WAIT2,$/;"	e	enum:__anon4
+TCP_H	tcp.h	2;"	d
+TCP_LAST_ACK	tcp.h	/^  TCP_LAST_ACK,$/;"	e	enum:__anon4
+TCP_LISTEN	tcp.h	/^  TCP_LISTEN,$/;"	e	enum:__anon4
+TCP_MAXWIN	tcp.h	126;"	d
+TCP_MAX_WINSHIFT	tcp.h	128;"	d
+TCP_MSS	tcp.h	124;"	d
+TCP_MSS_DEFAULT	tcp.h	139;"	d
+TCP_MSS_DESIRED	tcp.h	140;"	d
+TCP_SYN_RECV	tcp.h	/^  TCP_SYN_RECV,$/;"	e	enum:__anon4
+TCP_SYN_SENT	tcp.h	/^  TCP_SYN_SENT,$/;"	e	enum:__anon4
+TCP_TIME_WAIT	tcp.h	/^  TCP_TIME_WAIT,$/;"	e	enum:__anon4
+TH_ACK	tcp.h	32;"	d
+TH_CWR	tcp.h	35;"	d
+TH_ECE	tcp.h	34;"	d
+TH_FIN	tcp.h	28;"	d
+TH_FLAGS	tcp.h	36;"	d
+TH_OFF	tcp.h	26;"	d
+TH_PUSH	tcp.h	31;"	d
+TH_RST	tcp.h	30;"	d
+TH_SYN	tcp.h	29;"	d
+TH_URG	tcp.h	33;"	d
+UDP	mydef.h	14;"	d
+UDP_H	udp.h	2;"	d
+UTIL_H	util.h	2;"	d
+__unused	icmp.h	/^      u_int16_t	__unused;$/;"	m	struct:icmphdr::__anon1::__anon3
+ack	mydef.c	/^u_int8_t ack = 0;$/;"	v
+badcksum	mydef.c	/^u_int16_t badcksum = 0;$/;"	v
+beep	mydef.c	/^int32_t   beep = 0;$/;"	v
+bind	mydef.c	/^int32_t   bind = 0;$/;"	v
+check	udp.h	/^  u_int16_t check;$/;"	m	struct:udphdr
+checksum	icmp.h	/^  u_int16_t checksum;$/;"	m	struct:icmphdr
+cksum	icmp.c	/^uint16_t cksum(uint16_t *packet, int size_len)$/;"	f
+cksum	tcp.c	/^uint16_t cksum(uint16_t *packet, int size_len)$/;"	f
+cksum	udp.c	/^uint16_t cksum(uint16_t *packet, int size_len)$/;"	f
+code	icmp.h	/^  u_int8_t code;		\/* type sub-code *\/$/;"	m	struct:icmphdr
+count	mydef.c	/^int32_t   count = 0;$/;"	v
+cwr	mydef.c	/^u_int8_t cwr = 0;$/;"	v
+data	ip.h	/^    u_int32_t data[9];$/;"	m	struct:ip_timestamp
+data_end	mydef.c	/^off_t data_end;$/;"	v
+data_size	mydef.c	/^off_t data_size;$/;"	v
+debug	mydef.c	/^int32_t   debug = 0;$/;"	v
+dest	tcp.h	/^    u_int32_t dest;$/;"	m	struct:tcp_pseudoheader
+dest	udp.h	/^    u_int32_t dest;$/;"	m	struct:udp_pseudoheader
+dest	udp.h	/^  u_int16_t dest;$/;"	m	struct:udphdr
+dest_addr	mydef.c	/^uint32_t dest_addr;$/;"	v
+dest_port	mydef.c	/^u_int16_t dest_port = 0;$/;"	v
+dump_mode	mydef.c	/^int32_t dump_mode = 0;$/;"	v
+ece	mydef.c	/^u_int8_t ece = 0;$/;"	v
+echo	icmp.h	/^    } echo;			\/* echo datagram *\/$/;"	m	union:icmphdr::__anon1	typeref:struct:icmphdr::__anon1::__anon2
+ether_name	mydef.c	/^char *ether_name = 0;$/;"	v
+fast	mydef.c	/^int32_t  fast = 1;$/;"	v
+faster	mydef.c	/^int32_t  faster = 0;$/;"	v
+file_name	mydef.c	/^char *file_name = 0;$/;"	v
+fin	mydef.c	/^u_int8_t fin = 0;$/;"	v
+flood	mydef.c	/^int32_t  flood = 0;$/;"	v
+force_icmp	mydef.c	/^int32_t  force_icmp = 0;$/;"	v
+frag	icmp.h	/^    } frag;			\/* path mtu discovery *\/$/;"	m	union:icmphdr::__anon1	typeref:struct:icmphdr::__anon1::__anon3
+gateway	icmp.h	/^    u_int32_t	gateway;	\/* gateway address *\/$/;"	m	union:icmphdr::__anon1
+getLocalAddrinfo	util.c	/^int getLocalAddrinfo()$/;"	f
+getRemoteAddr	util.c	/^int getRemoteAddr()$/;"	f
+getTimeInterval	util.c	/^int getTimeInterval(const char* optarg)$/;"	f
+gettimestamp	icmp.c	/^int32_t gettimestamp()$/;"	f
+help_usage	prase_option.c	/^void help_usage()$/;"	f
+host	mydef.c	/^char *host;$/;"	v
+icmp_addr	mydef.c	/^int32_t  icmp_addr = 0;$/;"	v
+icmp_code	mydef.c	/^u_int8_t icmp_code = 0;$/;"	v
+icmp_gw	mydef.c	/^int32_t  icmp_gw = 0;$/;"	v
+icmp_help	mydef.c	/^int32_t  icmp_help = 0;$/;"	v
+icmp_mode	mydef.c	/^int32_t  icmp_mode = 0;$/;"	v
+icmp_ts	mydef.c	/^int32_t  icmp_ts = 0;$/;"	v
+icmp_type	mydef.c	/^u_int8_t icmp_type = 8;$/;"	v
+icmphdr	icmp.h	/^struct icmphdr$/;"	s
+id	icmp.h	/^      u_int16_t	id;$/;"	m	struct:icmphdr::__anon1::__anon2
+in_addr	ip.h	/^struct in_addr$/;"	s
+in_addr_t	ip.h	/^typedef u_int32_t in_addr_t;$/;"	t
+interval	mydef.c	/^int32_t   interval = 0;$/;"	v
+ip_dfrag	mydef.c	/^int32_t   ip_dfrag = 0;$/;"	v
+ip_frag	mydef.c	/^int32_t   ip_frag = 0;$/;"	v
+ip_fragoff	mydef.c	/^u_int16_t ip_fragoff = 0;$/;"	v
+ip_id	mydef.c	/^u_int16_t ip_id = 0;$/;"	v
+ip_lsrr	ip.h	/^struct ip_lsrr$/;"	s
+ip_lsrr	mydef.c	/^int32_t  ip_lsrr = 0;$/;"	v
+ip_mfrag	mydef.c	/^int32_t   ip_mfrag = 0;$/;"	v
+ip_noop	ip.h	/^struct ip_noop $/;"	s
+ip_option	mydef.c	/^int32_t   ip_option = 0;$/;"	v
+ip_proto	mydef.c	/^u_int8_t ip_proto = 6;$/;"	v
+ip_rr	ip.h	/^struct ip_rr $/;"	s
+ip_rroute	mydef.c	/^int32_t  ip_rroute = 0;$/;"	v
+ip_scurity	ip.h	/^struct ip_scurity $/;"	s
+ip_sid	ip.h	/^struct ip_sid$/;"	s
+ip_ssrr	ip.h	/^struct ip_ssrr$/;"	s
+ip_ssrr	mydef.c	/^int32_t  ip_ssrr = 0;$/;"	v
+ip_timestamp	ip.h	/^struct ip_timestamp$/;"	s
+ip_tstamp	mydef.c	/^int32_t  ip_tstamp = 0;$/;"	v
+iph_cksum	ip.h	/^	u_short iph_cksum;                 \/* checksum *\/$/;"	m	struct:iphdr
+iph_dst	ip.h	/^    in_addr_t iph_src,iph_dst;  \/* source and dest address *\/$/;"	m	struct:iphdr
+iph_id	ip.h	/^	u_short iph_id;                  \/* identification *\/$/;"	m	struct:iphdr
+iph_ihl	ip.h	/^    unsigned int iph_ihl:4;$/;"	m	struct:iphdr
+iph_len	ip.h	/^	u_short iph_len;                 \/* total length *\/$/;"	m	struct:iphdr
+iph_off	ip.h	/^	u_short iph_off;                 \/* fragment offset field *\/$/;"	m	struct:iphdr
+iph_proto	ip.h	/^	u_char  iph_proto;              \/* protocol *\/$/;"	m	struct:iphdr
+iph_src	ip.h	/^    in_addr_t iph_src,iph_dst;  \/* source and dest address *\/$/;"	m	struct:iphdr
+iph_tos	ip.h	/^	u_char  iph_tos;                 \/* type of service *\/$/;"	m	struct:iphdr
+iph_ttl	ip.h	/^    u_char  iph_ttl;                 \/* time to live *\/$/;"	m	struct:iphdr
+iph_version	ip.h	/^    unsigned int iph_version:4;$/;"	m	struct:iphdr
+iphdr	ip.h	/^struct iphdr {$/;"	s
+ipl_data	ip.h	/^    u_int32_t  ipl_data[9];$/;"	m	struct:ip_lsrr
+ipl_len	ip.h	/^    u_int8_t   ipl_len;$/;"	m	struct:ip_lsrr
+ipl_ptr	ip.h	/^    u_int8_t   ipl_ptr;$/;"	m	struct:ip_lsrr
+ipl_type	ip.h	/^    u_int8_t   ipl_type;$/;"	m	struct:ip_lsrr
+ipr_data	ip.h	/^    u_int32_t  ipr_data[9];$/;"	m	struct:ip_rr
+ipr_len	ip.h	/^    u_int8_t   ipr_len;$/;"	m	struct:ip_rr
+ipr_ptr	ip.h	/^    u_int8_t   ipr_ptr;$/;"	m	struct:ip_rr
+ipr_type	ip.h	/^    u_int8_t   ipr_type;$/;"	m	struct:ip_rr
+ips_data	ip.h	/^    u_int32_t  ips_data[9];$/;"	m	struct:ip_ssrr
+ips_len	ip.h	/^    u_int8_t   ips_len;$/;"	m	struct:ip_ssrr
+ips_ptr	ip.h	/^    u_int8_t   ips_ptr;$/;"	m	struct:ip_ssrr
+ips_type	ip.h	/^    u_int8_t   ips_type;$/;"	m	struct:ip_ssrr
+ipsid_len	ip.h	/^    u_int8_t ipsid_len;$/;"	m	struct:ip_sid
+ipsid_sid	ip.h	/^    u_int16_t ipsid_sid;$/;"	m	struct:ip_sid
+ipsid_type	ip.h	/^    u_int8_t ipsid_type;$/;"	m	struct:ip_sid
+ipt_flg	ip.h	/^    unsigned int ipt_flg:4;		\/* flags, see below *\/$/;"	m	struct:ip_timestamp
+ipt_len	ip.h	/^    u_int8_t ipt_len;			\/* size of structure (variable) *\/$/;"	m	struct:ip_timestamp
+ipt_oflw	ip.h	/^    unsigned int ipt_oflw:4;		\/* overflow counter *\/$/;"	m	struct:ip_timestamp
+ipt_ptr	ip.h	/^    u_int8_t ipt_ptr;			\/* index of current entry *\/$/;"	m	struct:ip_timestamp
+ipt_type	ip.h	/^    u_int8_t ipt_type;			\/* IPOPT_TS *\/$/;"	m	struct:ip_timestamp
+keep_port	mydef.c	/^int32_t   keep_port = 0;$/;"	v
+len	tcp.h	/^    u_int8_t len;$/;"	m	struct:tcp_maxseg
+len	tcp.h	/^    u_int8_t len;$/;"	m	struct:tcp_sack
+len	tcp.h	/^    u_int8_t len;$/;"	m	struct:tcp_sack_permitted
+len	tcp.h	/^    u_int8_t len;$/;"	m	struct:tcp_timestamp
+len	tcp.h	/^    u_int8_t len;$/;"	m	struct:tcp_winscale
+len	udp.h	/^  u_int16_t len;$/;"	m	struct:udphdr
+length	tcp.h	/^    u_int16_t length;$/;"	m	struct:tcp_pseudoheader
+length	udp.h	/^    u_int16_t length;$/;"	m	struct:udp_pseudoheader
+listen_mode	mydef.c	/^int32_t  listen_mode = 0;$/;"	v
+listen_sockfd	mydef.c	/^int32_t  listen_sockfd;$/;"	v
+long_options	prase_option.c	/^static struct option long_options[] = $/;"	v	typeref:struct:option	file:
+lsrr	mydef.c	/^int32_t   lsrr = 0;$/;"	v
+lsrr_route	mydef.c	/^char *lsrr_route = 0;$/;"	v
+main	main.c	/^int main(int argc, char **argv)$/;"	f
+maxlen	tcp.h	/^    u_int16_t maxlen;$/;"	m	struct:tcp_maxseg
+mtu	icmp.h	/^      u_int16_t	mtu;$/;"	m	struct:icmphdr::__anon1::__anon3
+mtu	mydef.c	/^u_int16_t mtu = 0;$/;"	v
+need_prase_dns	mydef.c	/^int32_t   need_prase_dns = 1;$/;"	v
+parcel_ip_packet	ip.c	/^void parcel_ip_packet(const char *packet,int *packet_len)$/;"	f
+parcel_proto_packet	protocal.c	/^int parcel_proto_packet(const char *pack_data,int *proto_len)$/;"	f
+prase_ip_option	ip.c	/^int prase_ip_option(const char *ip_opt, int *opt_len)$/;"	f
+prase_iproute	util.c	/^int prase_iproute(const char *optarg,const char *s)$/;"	f
+prase_mode_option	prase_option.c	/^int prase_mode_option(int opt,const char *optarg)$/;"	f
+prase_noarg_option	prase_option.c	/^int prase_noarg_option(const char* opt_name,const char *optarg)$/;"	f
+prase_option	prase_option.c	/^int prase_option(int argc, char **argv)$/;"	f
+prase_other_option	prase_option.c	/^int prase_other_option(int opt,const char *arg)$/;"	f
+prase_scanport	util.c	/^int prase_scanport(const char *optarg, const char *s)$/;"	f
+print_mode	mydef.c	/^int32_t print_mode = 0;$/;"	v
+protocol	tcp.h	/^    u_int8_t protocol;$/;"	m	struct:tcp_pseudoheader
+protocol	udp.h	/^    u_int8_t protocol;$/;"	m	struct:udp_pseudoheader
+push	mydef.c	/^u_int8_t push = 0;$/;"	v
+quiet	mydef.c	/^int32_t   quiet = 0;$/;"	v
+rand_dest	mydef.c	/^int32_t  rand_dest = 0;$/;"	v
+rand_ip_id	ip.c	/^int rand_ip_id()$/;"	f
+rand_ipaddr	ip.c	/^uint32_t rand_ipaddr(int type)$/;"	f
+rand_ipid	mydef.c	/^int32_t   rand_ipid = 1;$/;"	v
+rand_source	mydef.c	/^int32_t  rand_source = 0;$/;"	v
+rawip_mode	mydef.c	/^int32_t  rawip_mode = 0;$/;"	v
+recv_tstamp	tcp.h	/^    u_int32_t recv_tstamp;$/;"	m	struct:tcp_timestamp
+relative_id	mydef.c	/^int32_t   relative_id = 0;$/;"	v
+route_data	mydef.c	/^uint32_t route_data[8];$/;"	v
+rst	mydef.c	/^u_int8_t rst = 0;$/;"	v
+s_addr	ip.h	/^    in_addr_t s_addr;$/;"	m	struct:in_addr
+sack_num	tcp.h	/^    u_int32_t sack_num[9];$/;"	m	struct:tcp_sack
+scale	tcp.h	/^    u_int8_t scale;$/;"	m	struct:tcp_winscale
+scan_host	protocal.c	/^void scan_host()$/;"	f
+scan_mode	mydef.c	/^int32_t  scan_mode = 0;$/;"	v
+scanport_data	mydef.c	/^uint16_t scanport_data[16];$/;"	v
+send_count	mydef.c	/^int32_t   send_count = 0;$/;"	v
+send_packet	protocal.c	/^void send_packet()$/;"	f
+send_packet_flood	protocal.c	/^void send_packet_flood()$/;"	f
+send_sockfd	mydef.c	/^int32_t  send_sockfd;$/;"	v
+send_stamp	tcp.h	/^    u_int32_t send_stamp;$/;"	m	struct:tcp_timestamp
+sequence	icmp.h	/^      u_int16_t	sequence;$/;"	m	struct:icmphdr::__anon1::__anon2
+show_seq_num_only	mydef.c	/^int32_t   show_seq_num_only = 0;$/;"	v
+sigPort	main.c	/^void sigPort(int signo)$/;"	f
+sigTTL	main.c	/^void sigTTL(int signo)$/;"	f
+signal_handler	main.c	/^int signal_handler()$/;"	f
+source	tcp.h	/^    u_int32_t source;$/;"	m	struct:tcp_pseudoheader
+source	udp.h	/^    u_int32_t source;$/;"	m	struct:udp_pseudoheader
+source	udp.h	/^  u_int16_t source;$/;"	m	struct:udphdr
+source_port	mydef.c	/^u_int16_t source_port = 0;$/;"	v
+spoof	mydef.c	/^int32_t   spoof;$/;"	v
+src_addr	mydef.c	/^uint32_t src_addr;$/;"	v
+ssrr	mydef.c	/^int32_t   ssrr = 0;$/;"	v
+ssrr_route	mydef.c	/^char *ssrr_route = 0;$/;"	v
+strequl	util.c	/^int strequl(const char *str1, const char *str2)$/;"	f
+string_copy	mydef.c	/^char* string_copy(const char *source)$/;"	f
+syn	mydef.c	/^u_int8_t syn = 0;$/;"	v
+sys_mtu	mydef.c	/^u_int16_t sys_mtu = 0;$/;"	v
+tcp_ack_num	mydef.c	/^int32_t  tcp_ack_num = 0;$/;"	v
+tcp_eol	tcp.h	/^struct tcp_eol $/;"	s
+tcp_exitcode	mydef.c	/^int32_t  tcp_exitcode;$/;"	v
+tcp_maxseg	tcp.h	/^struct tcp_maxseg $/;"	s
+tcp_mode	mydef.c	/^int32_t  tcp_mode = 1;$/;"	v
+tcp_mss	mydef.c	/^u_int16_t tcp_mss = 0;$/;"	v
+tcp_nop	tcp.h	/^struct tcp_nop $/;"	s
+tcp_offset	mydef.c	/^u_int8_t tcp_offset = 0;$/;"	v
+tcp_pseudoheader	tcp.h	/^struct tcp_pseudoheader$/;"	s
+tcp_sack	tcp.h	/^struct tcp_sack $/;"	s
+tcp_sack_permit	mydef.c	/^int32_t  tcp_sack_permit = 0;$/;"	v
+tcp_sack_permitted	tcp.h	/^struct tcp_sack_permitted $/;"	s
+tcp_seq	tcp.h	/^typedef u_int tcp_seq;$/;"	t
+tcp_seq_num	mydef.c	/^int32_t  tcp_seq_num = 0;$/;"	v
+tcp_timestamp	mydef.c	/^int32_t  tcp_timestamp = 0;$/;"	v
+tcp_timestamp	tcp.h	/^struct tcp_timestamp $/;"	s
+tcp_winscale	tcp.h	/^struct tcp_winscale$/;"	s
+tcpheader	tcp.h	/^struct tcpheader {$/;"	s
+th_ack	tcp.h	/^	tcp_seq th_ack;                 \/* acknowledgement number *\/$/;"	m	struct:tcpheader
+th_dport	tcp.h	/^	u_short th_dport;               \/* destination port *\/$/;"	m	struct:tcpheader
+th_flags	tcp.h	/^	u_char  th_flags;$/;"	m	struct:tcpheader
+th_offx2	tcp.h	/^    u_char  th_offx2;        $/;"	m	struct:tcpheader
+th_seq	tcp.h	/^	tcp_seq th_seq;                 \/* sequence number *\/$/;"	m	struct:tcpheader
+th_sport	tcp.h	/^	u_short th_sport;               \/* source port *\/$/;"	m	struct:tcpheader
+th_sum	tcp.h	/^	u_short th_sum;                 \/* checksum *\/$/;"	m	struct:tcpheader
+th_urp	tcp.h	/^	u_short th_urp;                 \/* urgent pointer *\/$/;"	m	struct:tcpheader
+th_win	tcp.h	/^	u_short th_win;                 \/* window *\/$/;"	m	struct:tcpheader
+tos	mydef.c	/^u_int8_t tos = 0;$/;"	v
+tr_keep_ttl	mydef.c	/^int32_t  tr_keep_ttl = 0;$/;"	v
+tr_no_rtt	mydef.c	/^int32_t  tr_no_rtt = 0;$/;"	v
+tr_stop	mydef.c	/^int32_t  tr_stop = 0;$/;"	v
+traceroute_mode	mydef.c	/^int32_t  traceroute_mode = 0;$/;"	v
+transmit_icmp_packet	icmp.c	/^void transmit_icmp_packet(const char *packet,int *packet_len)$/;"	f
+transmit_tcp_packet	tcp.c	/^void transmit_tcp_packet(const char* packet,int *packet_len)$/;"	f
+transmit_udp_packet	udp.c	/^void transmit_udp_packet(const char* packet,int *packet_len)$/;"	f
+ttl	mydef.c	/^u_int8_t ttl = 64;$/;"	v
+type	icmp.h	/^  u_int8_t type;		\/* message type *\/$/;"	m	struct:icmphdr
+type	ip.h	/^    u_int8_t type;$/;"	m	struct:ip_noop
+type	tcp.h	/^    u_int8_t type;$/;"	m	struct:tcp_eol
+type	tcp.h	/^    u_int8_t type;$/;"	m	struct:tcp_maxseg
+type	tcp.h	/^    u_int8_t type;$/;"	m	struct:tcp_nop
+type	tcp.h	/^    u_int8_t type;$/;"	m	struct:tcp_sack
+type	tcp.h	/^    u_int8_t type;$/;"	m	struct:tcp_sack_permitted
+type	tcp.h	/^    u_int8_t type;$/;"	m	struct:tcp_timestamp
+type	tcp.h	/^    u_int8_t type;$/;"	m	struct:tcp_winscale
+udp_mode	mydef.c	/^int32_t  udp_mode = 0;$/;"	v
+udp_pseudoheader	udp.h	/^struct udp_pseudoheader$/;"	s
+udphdr	udp.h	/^struct udphdr$/;"	s
+un	icmp.h	/^  } un;$/;"	m	struct:icmphdr	typeref:union:icmphdr::__anon1
+unbind	mydef.c	/^int32_t   unbind = 0;$/;"	v
+urg	mydef.c	/^u_int8_t urg = 0;$/;"	v
+use_normal_socket	protocal.c	/^void use_normal_socket()$/;"	f
+use_rawip_socket	protocal.c	/^void use_rawip_socket()$/;"	f
+verbose	mydef.c	/^int32_t   verbose = 0;$/;"	v
+version_print	prase_option.c	/^void version_print()$/;"	f
+wait_client_connect	protocal.c	/^void wait_client_connect()$/;"	f
+wait_packet	protocal.c	/^void wait_packet()$/;"	f
+win_byte_order	mydef.c	/^int32_t   win_byte_order = 0;$/;"	v
+window	mydef.c	/^u_int8_t window = 0;$/;"	v
+zero	tcp.h	/^    u_int8_t zero;$/;"	m	struct:tcp_pseudoheader
+zero	udp.h	/^    u_int8_t zero;$/;"	m	struct:udp_pseudoheader

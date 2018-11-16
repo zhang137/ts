@@ -11,8 +11,9 @@
 #include <netdb.h>
 #include <net/if.h>
 #include <arpa/inet.h>
+#include <errno.h>
 
-#include "mydef.h"
+#include "def.h"
 #include "util.h"
 #include "ip.h"
 
@@ -21,11 +22,13 @@
 int getTimeInterval(const char* optarg)
 {
     size_t slen = sizeof(optarg);
-    if(slen < 2)
+    if(slen < 2) {
         return -1;
-    
-    if(optarg[0] != 'u' || !isdigit(*(optarg+2)))
+    }
+
+    if(optarg[0] != 'u' || !isdigit(*(optarg+2))) {
         return -1;
+    }
 
     return atoi(optarg+1);
 }
@@ -37,17 +40,18 @@ int JudgeIpIsCorrect(const char *ip)
     char *pdelim = NULL;
     const char *temp = ip;
 
-    if(slen > INET_ADDRSTRLEN || slen < 7)
+    if(slen > INET_ADDRSTRLEN || slen < 7) {
         return 0;
+    }
 
-    while ( (pdelim = strchr(temp,'.')) != NULL)
-    {
+    while ( (pdelim = strchr(temp,'.')) != NULL) {
         delim_num ++;
         temp = pdelim + 1;
     }
 
-    if(delim_num != 3)
+    if(delim_num != 3) {
         return 0;
+    }
 
     char *ip_data = strdup(ip);
     *(ip_data + slen) = '.';
@@ -55,9 +59,10 @@ int JudgeIpIsCorrect(const char *ip)
     while((pdelim = strchr(ip_data,'.')) != NULL)
     {
         *pdelim = 0;
-        if(*ip_data == '\0')
+        if(*ip_data == '\0') {
             return 0;
-        
+        }
+
         char *temp = ip_data;
         while(temp != pdelim)
         {
@@ -66,8 +71,9 @@ int JudgeIpIsCorrect(const char *ip)
         }
 
         int subfield = atoi(ip_data);
-        if(subfield < 0 || subfield > 255)
+        if(subfield < 0 || subfield > 255) {
             return 0;
+        }
 
         ip_data = pdelim + 1;
     }
@@ -82,8 +88,9 @@ int prase_iproute(const char *optarg,const char *s)
     const char *temp = NULL; 
     const char *data = optarg;
 
-    if(!data)
+    if(!data) {
         return 0;
+    }
 
     while((temp = strtok_r(data,s,&pdata)) != NULL)
     {
@@ -108,11 +115,11 @@ int JudgeScanPortCorrect(const char *arg,int *opt_num)
     char *pdelim = NULL;
     const char *temp = arg;
 
-    if(slen > 11 || slen < 3)
+    if(slen > 11 || slen < 3) {
         return 0;
+    }
 
-    while ( (pdelim = strchr(temp,'-')) != NULL)
-    {
+    while ( (pdelim = strchr(temp,'-')) != NULL) {
         delim_num ++;
         temp = pdelim + 1;
     }
@@ -126,20 +133,23 @@ int JudgeScanPortCorrect(const char *arg,int *opt_num)
     while((pdelim = strchr(port_data,'-')) != NULL)
     {
         *pdelim = 0;
-        if(*port_data == '\0')
+        if(*port_data == '\0') {
             return 0;
-        
+        }
+
         char *temp = port_data;
         while(temp != pdelim)
         {
-            if(!isdigit(*temp))
+            if(!isdigit(*temp)) {
                 return 0;
+            }
         }
 
         int port = atoi(port_data);
-        if(port < 0 || port > 65535)
+        if(port < 0 || port > 65535) {
             return 0;
-        
+        }
+
         scanport_data[(*opt_num)++] = port;
         port_data = pdelim + 1;
     }
@@ -187,34 +197,30 @@ int getLocalAddrinfo()
     u_int32_t source_addr;
     
     res = getifaddrs(&&addr);
-    if(res < 0)
-    {
+    if(res < 0) {
         return -1;
     }
 
     for(paddr = &addr; paddr != NULL; paddr = paddr->ifa_next)
     {
-        if(paddr->ifa_addr->sa_family == AF_INET)
+        if(paddr->ifa_addr->sa_family == AF_INET) 
         {
             if((ether_name && strstr(paddr->ifa_name,ether_name)) 
-                    || !strstr(paddr->ifa_name,"lo"))
+                    || !strstr(paddr->ifa_name,"lo")) 
             {
-                if(!ether_name)
+                if(!ether_name) {
                     ether_name = string_copy(paddr->ifa_name);
-
+                }
                 source_addr = ((struct sockaddr_in*)paddr->ifa_addr)->sin_addr.s_addr;
-                
                 break;
             }
-
         }
     }
 
     freeifaddrs(&addr);
 
     tempfd = socket(AF_INET,SOCK_STREAM,0);
-    if(tempfd < 0)
-    {
+    if(tempfd < 0) {
         return -1;
     }
 
@@ -224,8 +230,7 @@ int getLocalAddrinfo()
     strcpy(conf.ifc_req->ifr_name,ether_name);
 
     res = ioctl(tempfd,SIOCGIFCONF,&conf);
-    if(res < 0)
-    {
+    if(res < 0) {
         return -1;
     }
     
@@ -245,13 +250,11 @@ int getRemoteAddr()
     addr.ai_family = AF_INET;
 
     res = getaddrinfo(host,NULL,&addr,&result);
-    if(res < 0)
-    {
+    if(res < 0) {
         return -1;
     }
 
-    for(paddr = result; paddr != NULL; paddr = paddr->ai_next)
-    {
+    for(paddr = result; paddr != NULL; paddr = paddr->ai_next) {
         dest_addr = ((struct sockaddr_in *)paddr->ai_addr)->sin_addr.s_addr;
         break;
     }
@@ -263,14 +266,9 @@ int getRemoteAddr()
 
 
 
-int read_data(const char *packet, int len)
+int open_file()
 {
     int fd = 0;
-    int ret = 0;
-
-    if(!len) {
-        len = FILE_DATA_SIZE;
-    }
 
     if(access(file_name,R_OK | F_OK)) {
         return -1; 
@@ -278,11 +276,39 @@ int read_data(const char *packet, int len)
    
     fd = open(file_name,O_RDONLY);
     if(fd < 0) {
-        return -1;
+        exit(-1);
+    }
+    return fd;
+}
+
+int getfiledata(int fd, char *buffer) 
+{
+    int ret = 0;
+    int saved_errno;
+    if(!data_size) {
+        data_size = FILE_DATA_SIZE;
     }
 
-    while(1) ;
-
-
+    do {
+        saved_errno = 0;
+        ret = read(fd, buffer, data_size)) 
+        if(ret < 0) {
+            saved_errno = (errno == EINTR) ? errno : 0;
+        }   
+    }while (saved_errno == EINTR);
+    
+    return ret;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -6,7 +6,7 @@
 #include <netinet/in.h>
 #include <time.h>
 
-#include "mydef.h"
+#include "def.h"
 #include "ip.h"
 
 

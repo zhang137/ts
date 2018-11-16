@@ -15,6 +15,8 @@ int JudgeScanPortCorrect(const char *arg,int *opt_num);
 
 int prase_scanport(const char *optarg, const char *s);
 
-int read_data(const char *packet, int len);
+int open_file();
+
+int getfiledata(int fd, char *buffer); 
 
 #endif //UTIL_H

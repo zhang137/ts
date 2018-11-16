@@ -121,7 +121,14 @@ extern uint32_t redict_gateway;
 extern uint32_t route_data[8];
 extern uint16_t scanport_data[16];
 
-
+struct pseudoheader
+{
+    u_int32_t source;
+    u_int32_t dest;
+    u_int8_t zero;
+    u_int8_t protocol;
+    u_int16_t length;
+};
 
 char *string_copy(const char *source);
 
